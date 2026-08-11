@@ -1,259 +1,1004 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
 
-<title>
-二十岁是我们的歌 · 小镇档案馆
-</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>二十岁是我们的歌 · 小镇档案馆</title>
+
 
 <style>
-body{
-margin:0;
-background:#f4efe5;
-font-family:
-"PingFang SC",
-"Microsoft YaHei",
-sans-serif;
-color:#4b4439;
+
+/* =========================
+   基础
+========================= */
+
+*{
+    box-sizing:border-box;
 }
+
+body{
+
+    margin:0;
+
+    background:#f4efe5;
+
+    font-family:
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+
+    color:#4b4439;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   小镇地图背景
+========================= */
+
+#townMap{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("images/town-map.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    opacity:0.10;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    animation:
+        mapBreath 12s ease-in-out infinite;
+
+}
+
+
+@keyframes mapBreath{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:0.08;
+    }
+
+    50%{
+        transform:scale(1.025);
+        opacity:0.12;
+    }
+
+}
+
+
+/* =========================
+   页面
+========================= */
 
 .container{
-max-width:720px;
-margin:auto;
-padding:60px 30px;
+
+    position:relative;
+
+    z-index:1;
+
+    max-width:720px;
+
+    margin:auto;
+
+    padding:70px 30px 90px;
+
 }
+
+
+.page{
+
+    animation:
+        pageIn .8s ease;
+
+}
+
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   标题
+========================= */
 
 h1{
-font-weight:400;
-letter-spacing:5px;
-text-align:center;
+
+    font-weight:400;
+
+    letter-spacing:5px;
+
+    text-align:center;
+
+    margin-bottom:10px;
+
 }
+
 
 .subtitle{
-text-align:center;
-line-height:2;
-margin-top:25px;
+
+    text-align:center;
+
+    line-height:2;
+
+    margin-top:20px;
+
 }
+
+
+.town-name{
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-align:center;
+
+    opacity:.55;
+
+    margin-bottom:35px;
+
+}
+
+
+/* =========================
+   卡片
+========================= */
 
 .card{
-background:#fffdf8;
-padding:35px;
-border-radius:18px;
-margin-top:40px;
-box-shadow:
-0 8px 25px rgba(0,0,0,0.08);
+
+    background:
+        rgba(255,253,248,.92);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    margin-top:30px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
+
+    backdrop-filter:
+        blur(3px);
+
 }
 
-input{
-width:80%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:16px;
-text-align:center;
+
+.card h2{
+
+    font-weight:400;
+
+    margin-top:0;
+
 }
 
-button{
-margin-top:25px;
-padding:12px 35px;
-border:none;
-border-radius:30px;
-background:#82715c;
-color:white;
-font-size:15px;
-cursor:pointer;
-}
-
-.hidden{
-display:none;
-}
-
-.chapter{
-margin-top:20px;
-padding:20px;
-background:#f8f4eb;
-border-radius:12px;
-}
-
-.chapter a{
-text-decoration:none;
-color:#675743;
-}
-
-.small{
-font-size:14px;
-opacity:.65;
-line-height:1.8;
-}
 
 .line{
-height:1px;
-background:#ddd;
-margin:25px 0;
+
+    height:1px;
+
+    background:#ddd5c8;
+
+    margin:25px 0;
+
+}
+
+
+/* =========================
+   输入
+========================= */
+
+input{
+
+    width:80%;
+
+    max-width:300px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #d8d0c4;
+
+    background:#fffdf8;
+
+    font-size:16px;
+
+    text-align:center;
+
+    outline:none;
+
+}
+
+
+input:focus{
+
+    border-color:#9a8971;
+
+}
+
+
+/* =========================
+   按钮
+========================= */
+
+button{
+
+    margin-top:25px;
+
+    padding:12px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#82715c;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
+
+
+/* =========================
+   小镇章节
+========================= */
+
+.chapter{
+
+    margin-top:18px;
+
+    padding:22px;
+
+    background:
+        rgba(248,244,235,.92);
+
+    border-radius:12px;
+
+    border-left:
+        2px solid #b8aa95;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.chapter:hover{
+
+    transform:
+        translateX(3px);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.05);
+
+}
+
+
+.chapter a{
+
+    text-decoration:none;
+
+    color:#675743;
+
+    font-size:18px;
+
+}
+
+
+.chapter-description{
+
+    margin-top:8px;
+
+}
+
+
+.small{
+
+    font-size:14px;
+
+    opacity:.65;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================
+   下载档案
+========================= */
+
+.download{
+
+    text-align:center;
+
+}
+
+
+.download-button{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    background:#82715c;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+
+}
+
+
+.download-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    opacity:.9;
+
+}
+
+
+/* =========================
+   返回主页
+========================= */
+
+.return-button{
+
+    display:block;
+
+    margin:35px auto 0;
+
+    background:transparent;
+
+    color:#756752;
+
+    border:1px solid #cfc5b5;
+
+}
+
+
+/* =========================
+   页脚
+========================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:60px;
+
+    font-size:13px;
+
+    line-height:2;
+
+    opacity:.5;
+
+}
+
+
+/* =========================
+   隐藏
+========================= */
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* =========================
+   手机端
+========================= */
+
+@media(max-width:600px){
+
+    .container{
+
+        padding:
+            50px 20px 80px;
+
+    }
+
+
+    h1{
+
+        font-size:25px;
+
+        letter-spacing:4px;
+
+    }
+
+
+    .card{
+
+        padding:25px;
+
+    }
+
+
+    input{
+
+        width:90%;
+
+    }
+
 }
 
 </style>
+
 </head>
+
+
 <body>
+
+
+<!-- =========================
+     小镇地图
+========================= -->
+
+<div id="townMap"></div>
+
+
+
 <div class="container">
 
-<!-- 登录页 -->
-<div id="login">
-<h1>
-二十岁是我们的歌
-</h1>
-<p class="subtitle">
-小镇档案馆<br>
-请输入你的居民坐标
-</p>
 
-<div class="card"
-style="text-align:center;">
+<!-- ==================================================
+     登录页
+================================================== -->
 
-<input 
-id="code"
-placeholder="居民编号">
+<div
+    id="login"
+    class="page">
 
-<br>
 
-<button onclick="enterTown()">
-定位
-</button>
-<p class="small">
-坐标来自你收到的信封。
-</p>
-</div>
-</div>
+    <div class="town-name">
 
-<!-- 档案页 -->
-<div id="archive"
-class="hidden">
-<h1>
-居民档案
-</h1>
-<div class="card">
-<h2 id="resident">
-</h2>
-<div class="line"></div>
-<p>
-档案状态：
-已归档
-</p>
+        TOWN ARCHIVE
 
-<p>
-停留时间：
-2022 - 2026
-</p>
+    </div>
 
-<p>
-所在区域：
-江苏省·南京市
-</p>
 
-<p class="small">
-正在调取居民曾留下的声音与影像……
-</p>
+    <h1>
 
-</div>
+        二十岁是我们的歌
 
-<div class="card">
-<h2>
-小镇记录
-</h2>
+    </h1>
 
-<div class="chapter">
-<a href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0">
-第一章 · 辩
-</a>
-<br>
-<span class="small">
-殿堂档案：
-关于语言、辩经与相遇
-</span>
-</div>
 
-<div class="chapter">
-<a href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0">
-第二章 · 行
-</a>
-<br>
-<span class="small">
-列车档案：
-关于远航、同行与城堡
-</span>
-</div>
+    <p class="subtitle">
 
-<div class="chapter">
-<a href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0">
-第三章 · 默
-</a>
-<br>
-<span class="small">
-停靠档案：
-关于距离、忙碌与等待
-</span>
-</div>
+        小镇档案馆<br>
 
-<div class="chapter">
-<a href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0">
-第四章 · 逢
-</a>
-<br>
-<span class="small">
-春日档案：
-关于重逢与新的方向
-</span>
+        请输入你的居民坐标
+
+    </p>
+
+
+
+    <div
+        class="card"
+        style="text-align:center;">
+
+
+        <input
+            id="code"
+            maxlength="6"
+            inputmode="numeric"
+            placeholder="六位居民邮编">
+
+
+        <br>
+
+
+        <button
+            onclick="enterTown()">
+
+            定位
+
+        </button>
+
+
+        <p class="small">
+
+            坐标为六位邮编，<br>
+
+            来自你收到的信封或明信片。
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="footer">
+
+        小镇仍在运行。<br>
+
+        档案持续保存中。
+
+    </div>
+
 
 </div>
+
+
+
+<!-- ==================================================
+     档案页
+================================================== -->
+
+<div
+    id="archive"
+    class="page hidden">
+
+
+    <div class="town-name">
+
+        TOWN ARCHIVE
+
+    </div>
+
+
+    <h1>
+
+        居民档案
+
+    </h1>
+
+
+
+    <!-- 居民信息 -->
+
+    <div class="card">
+
+
+        <h2 id="resident">
+
+        </h2>
+
+
+        <div class="line"></div>
+
+
+        <p>
+
+            档案状态：
+            已归档
+
+        </p>
+
+
+        <p>
+
+            身份：
+            结辩
+
+        </p>
+
+
+        <p>
+
+            停留时间：
+            2022 - 2026
+
+        </p>
+
+
+        <p>
+
+            所在区域：
+            二十岁小镇
+
+        </p>
+
+
+        <p class="small">
+
+            正在调取居民曾留下的声音与影像……
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         小镇记录
+    ================================================== -->
+
+    <div class="card">
+
+
+        <h2>
+
+            小镇记录
+
+        </h2>
+
+
+        <p class="small">
+
+            四卷档案，记录小镇曾经发生过的事情。
+
+        </p>
+
+
+
+        <!-- 第一章 -->
+
+        <div class="chapter">
+
+
+            <a
+                href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0"
+                target="_blank"
+                rel="noopener">
+
+                第一章 · 辩
+
+            </a>
+
+
+            <div
+                class="small chapter-description">
+
+                殿堂档案：<br>
+
+                寻找语言、辩经与相遇
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 第二章 -->
+
+        <div class="chapter">
+
+
+            <a
+                href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0"
+                target="_blank"
+                rel="noopener">
+
+                第二章 · 行
+
+            </a>
+
+
+            <div
+                class="small chapter-description">
+
+                列车档案：<br>
+
+                查询远航、同行与城堡
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 第三章 -->
+
+        <div class="chapter">
+
+
+            <a
+                href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0"
+                target="_blank"
+                rel="noopener">
+
+                第三章 · 默
+
+            </a>
+
+
+            <div
+                class="small chapter-description">
+
+                停靠档案：<br>
+
+                关于距离、忙碌与等待
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 第四章 -->
+
+        <div class="chapter">
+
+
+            <a
+                href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0"
+                target="_blank"
+                rel="noopener">
+
+                第四章 · 逢
+
+            </a>
+
+
+            <div
+                class="small chapter-description">
+
+                春日档案：<br>
+
+                确认重逢与新的方向
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         完整档案下载
+    ================================================== -->
+
+    <div class="card download">
+
+
+        <h2>
+
+            完整档案
+
+        </h2>
+
+
+        <p class="small">
+
+            如果希望保存这座小镇，<br>
+
+            可以下载完整档案。
+
+        </p>
+
+
+        <a
+            class="download-button"
+            href="https://pan.baidu.com/s/1auMqXSOGkCNQkl2AIzgt0A?pwd=jrhn"
+            target="_blank"
+            rel="noopener">
+
+            调取完整档案
+
+        </a>
+
+
+        <p class="small">
+
+            提取码：jrhn
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- 返回主页 -->
+
+    <button
+        class="return-button"
+        onclick="returnHome()">
+
+        返回小镇入口
+
+    </button>
+
+
+
+    <div class="footer">
+
+        档案读取完毕。<br>
+
+        小镇仍在运行。
+
+    </div>
+
+
 </div>
+
+
 </div>
-</div>
+
 
 
 <script>
-const residents={
-"260304":
-"居民：琳达",
-"260401":
-"居民：程程",
-"260402":
-"居民：小林"
+
+
+/* ==================================================
+   居民数据库
+================================================== */
+
+const residents = {
+
+    "260304":
+        "居民：琳达",
+
+    "260401":
+        "居民：程程",
+
+    "260402":
+        "居民：小林"
+
 };
+
+
+
+/* ==================================================
+   进入小镇
+================================================== */
 
 function enterTown(){
 
-let code=document
-.getElementById("code")
-.value;
 
-if(!residents[code]){
+    const input =
+        document.getElementById("code");
 
-alert(
-"该居民坐标尚未被记录。"
-);
 
-return;
+    const code =
+        input.value.trim();
+
+
+    if(!residents[code]){
+
+
+        alert(
+            "该居民坐标尚未被记录。"
+        );
+
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("login")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("archive")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("resident")
+        .innerHTML =
+        residents[code];
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 }
 
-document
-.getElementById("login")
-.classList
-.add("hidden");
 
-document
-.getElementById("archive")
-.classList
-.remove("hidden");
 
-document
-.getElementById("resident")
-.innerHTML=
-residents[code];
+/* ==================================================
+   返回主页
+================================================== */
+
+function returnHome(){
+
+
+    document
+        .getElementById("archive")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("login")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("code")
+        .value = "";
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 }
-
 
 </script>
 
@@ -261,3 +1006,4 @@ residents[code];
 </body>
 
 </html>
+```
