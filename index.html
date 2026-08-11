@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -27,9 +28,12 @@ body{
     background:#f4efe5;
 
     font-family:
-        "PingFang SC",
-        "Microsoft YaHei",
-        sans-serif;
+        "Songti SC",
+        "STSong",
+        "Noto Serif CJK SC",
+        "Source Han Serif SC",
+        "SimSun",
+        serif;
 
     color:#4b4439;
 
@@ -50,7 +54,7 @@ body{
 
     inset:0;
 
-    background-image:url("town-map.png");
+    background-image:url("images/town-map.png");
 
     background-size:cover;
 
@@ -71,13 +75,19 @@ body{
 @keyframes mapBreath{
 
     0%,100%{
+
         transform:scale(1);
+
         opacity:0.08;
+
     }
 
     50%{
+
         transform:scale(1.025);
+
         opacity:0.12;
+
     }
 
 }
@@ -139,9 +149,17 @@ body{
 
 h1{
 
+    font-family:
+        "Songti SC",
+        "STSong",
+        "Noto Serif CJK SC",
+        "Source Han Serif SC",
+        "SimSun",
+        serif;
+
     font-weight:400;
 
-    letter-spacing:5px;
+    letter-spacing:7px;
 
     text-align:center;
 
@@ -150,26 +168,50 @@ h1{
 }
 
 
+h2{
+
+    font-family:
+        "Songti SC",
+        "STSong",
+        "Noto Serif CJK SC",
+        "Source Han Serif SC",
+        "SimSun",
+        serif;
+
+    font-weight:400;
+
+    letter-spacing:2px;
+
+}
+
+
 .subtitle{
 
     text-align:center;
 
-    line-height:2;
+    line-height:2.2;
 
     margin-top:20px;
+
+    letter-spacing:1px;
 
 }
 
 
 .town-name{
 
-    font-size:13px;
+    font-family:
+        "Times New Roman",
+        "Songti SC",
+        serif;
 
-    letter-spacing:4px;
+    font-size:12px;
+
+    letter-spacing:5px;
 
     text-align:center;
 
-    opacity:.55;
+    opacity:.48;
 
     margin-bottom:35px;
 
@@ -187,12 +229,12 @@ h1{
 
     padding:35px;
 
-    border-radius:18px;
+    border-radius:14px;
 
     margin-top:30px;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.07);
+        0 8px 25px rgba(0,0,0,.06);
 
     backdrop-filter:
         blur(3px);
@@ -202,12 +244,16 @@ h1{
 
 .card h2{
 
-    font-weight:400;
-
     margin-top:0;
+
+    margin-bottom:10px;
 
 }
 
+
+/* =========================
+   分割线
+========================= */
 
 .line{
 
@@ -232,17 +278,33 @@ input{
 
     padding:14px;
 
-    border-radius:10px;
+    border-radius:8px;
 
     border:1px solid #d8d0c4;
 
     background:#fffdf8;
+
+    font-family:
+        "Songti SC",
+        "STSong",
+        serif;
 
     font-size:16px;
 
     text-align:center;
 
     outline:none;
+
+    letter-spacing:2px;
+
+}
+
+
+input::placeholder{
+
+    color:#aaa093;
+
+    letter-spacing:1px;
 
 }
 
@@ -272,7 +334,14 @@ button{
 
     color:white;
 
+    font-family:
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:15px;
+
+    letter-spacing:1px;
 
     cursor:pointer;
 
@@ -293,13 +362,80 @@ button:hover{
 
 
 /* =========================
-   小镇章节
+   居民照片
 ========================= */
 
-/*
-   整个章节色块都是链接，
-   不只是标题文字。
-*/
+.resident-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:5px;
+
+}
+
+
+.resident-photo{
+
+    width:145px;
+
+    height:145px;
+
+    flex-shrink:0;
+
+    object-fit:cover;
+
+    border-radius:6px;
+
+    border:1px solid #d8d0c4;
+
+    padding:5px;
+
+    background:#fffdf8;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.06);
+
+}
+
+
+.resident-info{
+
+    flex:1;
+
+}
+
+
+.resident-info h2{
+
+    margin:0 0 12px;
+
+    font-size:23px;
+
+    letter-spacing:2px;
+
+}
+
+
+.resident-label{
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    opacity:.45;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   小镇章节
+========================= */
 
 .chapter{
 
@@ -316,7 +452,7 @@ button:hover{
     background:
         rgba(248,244,235,.92);
 
-    border-radius:12px;
+    border-radius:10px;
 
     border-left:
         2px solid #b8aa95;
@@ -342,6 +478,8 @@ button:hover{
 .chapter-title{
 
     font-size:18px;
+
+    letter-spacing:1px;
 
 }
 
@@ -391,7 +529,14 @@ button:hover{
 
     text-decoration:none;
 
+    font-family:
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:15px;
+
+    letter-spacing:1px;
 
     transition:
         transform .2s ease,
@@ -445,6 +590,8 @@ button:hover{
 
     opacity:.5;
 
+    letter-spacing:1px;
+
 }
 
 
@@ -477,7 +624,7 @@ button:hover{
 
         font-size:25px;
 
-        letter-spacing:4px;
+        letter-spacing:5px;
 
     }
 
@@ -492,6 +639,29 @@ button:hover{
     input{
 
         width:90%;
+
+    }
+
+
+    .resident-profile{
+
+        gap:18px;
+
+    }
+
+
+    .resident-photo{
+
+        width:105px;
+
+        height:105px;
+
+    }
+
+
+    .resident-info h2{
+
+        font-size:20px;
 
     }
 
@@ -629,9 +799,45 @@ button:hover{
     <div class="card">
 
 
-        <h2 id="resident">
+        <div class="resident-profile">
 
-        </h2>
+
+            <!-- 居民照片 -->
+
+            <img
+                id="residentPhoto"
+                class="resident-photo"
+                src=""
+                alt="居民档案照片">
+
+
+            <div class="resident-info">
+
+
+                <div class="resident-label">
+
+                    RESIDENT ARCHIVE
+
+                </div>
+
+
+                <h2 id="resident">
+
+                </h2>
+
+
+                <p class="small">
+
+                    居民影像已归档
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
 
 
         <div class="line"></div>
@@ -905,14 +1111,29 @@ button:hover{
 
 const residents = {
 
-    "260304":
-        "居民：琳达",
+    "260304": {
 
-    "260401":
-        "居民：程程",
+        name:"居民：琳达",
 
-    "260402":
-        "居民：小林"
+        photo:"linda.png"
+
+    },
+
+    "260401": {
+
+        name:"居民：程程",
+
+        photo:"chengcheng.png"
+
+    },
+
+    "260402": {
+
+        name:"居民：小林",
+
+        photo:"xiaolin.png"
+
+    }
 
 };
 
@@ -958,10 +1179,20 @@ function enterTown(){
         .remove("hidden");
 
 
+    /* 居民姓名 */
+
     document
         .getElementById("resident")
         .innerHTML =
-        residents[code];
+        residents[code].name;
+
+
+    /* 居民照片 */
+
+    document
+        .getElementById("residentPhoto")
+        .src =
+        residents[code].photo;
 
 
     window.scrollTo({
@@ -1014,6 +1245,3 @@ function returnHome(){
 
 
 </body>
-
-</html>
-```
