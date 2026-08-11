@@ -12,29 +12,30 @@
 
 <style>
 
+
 body{
 
 margin:0;
 
-background:#f5f0e6;
+background:#f4efe5;
 
 font-family:
 "PingFang SC",
 "Microsoft YaHei",
 sans-serif;
 
-color:#403a32;
+color:#4b4439;
 
 }
 
 
 .container{
 
-max-width:700px;
+max-width:720px;
 
 margin:auto;
 
-padding:50px 30px;
+padding:60px 30px;
 
 }
 
@@ -43,7 +44,7 @@ h1{
 
 font-weight:400;
 
-letter-spacing:4px;
+letter-spacing:5px;
 
 text-align:center;
 
@@ -54,9 +55,9 @@ text-align:center;
 
 text-align:center;
 
-margin-top:20px;
-
 line-height:2;
+
+margin-top:25px;
 
 }
 
@@ -64,81 +65,59 @@ line-height:2;
 
 .card{
 
-background:white;
+background:#fffdf8;
 
-padding:30px;
+padding:35px;
+
+border-radius:18px;
 
 margin-top:40px;
 
-border-radius:15px;
-
 box-shadow:
-0 5px 20px rgba(0,0,0,0.08);
+0 8px 25px rgba(0,0,0,0.08);
 
 }
+
 
 
 input{
 
 width:80%;
 
-padding:12px;
+padding:14px;
 
-font-size:16px;
+border-radius:10px;
 
 border:1px solid #ddd;
 
-border-radius:8px;
+font-size:16px;
+
+text-align:center;
 
 }
 
 
+
 button{
 
-margin-top:20px;
+margin-top:25px;
 
 padding:12px 35px;
 
 border:none;
 
-border-radius:25px;
+border-radius:30px;
 
-background:#85745d;
+background:#82715c;
 
 color:white;
+
+font-size:15px;
 
 cursor:pointer;
 
 }
 
-
-.chapter{
-
-margin-top:25px;
-
-padding:20px;
-
-background:#faf8f2;
-
-border-radius:12px;
-
-}
-
-
-.video{
-
-margin-top:15px;
-
-}
-
-
-video{
-
-width:100%;
-
-border-radius:10px;
-
-}
 
 
 .hidden{
@@ -148,11 +127,48 @@ display:none;
 }
 
 
+
+.chapter{
+
+margin-top:20px;
+
+padding:20px;
+
+background:#f8f4eb;
+
+border-radius:12px;
+
+}
+
+
+.chapter a{
+
+text-decoration:none;
+
+color:#675743;
+
+}
+
+
+
 .small{
 
 font-size:14px;
 
-opacity:0.7;
+opacity:.65;
+
+line-height:1.8;
+
+}
+
+
+.line{
+
+height:1px;
+
+background:#ddd;
+
+margin:25px 0;
 
 }
 
@@ -169,11 +185,16 @@ opacity:0.7;
 <div class="container">
 
 
+
+<!-- 登录页 -->
+
 <div id="login">
 
 
 <h1>
+
 二十岁是我们的歌
+
 </h1>
 
 
@@ -187,11 +208,12 @@ opacity:0.7;
 
 
 
-<div class="card">
+<div class="card"
+style="text-align:center;">
 
 
-<input id="code"
-
+<input 
+id="code"
 placeholder="居民编号">
 
 
@@ -200,22 +222,31 @@ placeholder="居民编号">
 
 <button onclick="enterTown()">
 
-进入小镇
+定位
 
 </button>
 
 
-</div>
+<p class="small">
+
+坐标来自你收到的信封。
+
+</p>
 
 
 </div>
 
 
+</div>
 
+
+
+
+
+<!-- 档案页 -->
 
 
 <div id="archive"
-
 class="hidden">
 
 
@@ -230,21 +261,42 @@ class="hidden">
 <div class="card">
 
 
-<h2 id="name">
+<h2 id="resident">
 
 </h2>
 
 
+<div class="line"></div>
+
+
 <p>
 
-身份确认完成。
+档案状态：
+已归档
 
 </p>
+
+
+<p>
+
+停留时间：
+2023 - 2026
+
+</p>
+
+
+<p>
+
+所在区域：
+二十岁小镇
+
+</p>
+
 
 
 <p class="small">
 
-正在调取你在小镇留下的记录……
+正在调取居民曾留下的声音与影像……
 
 </p>
 
@@ -255,7 +307,107 @@ class="hidden">
 
 
 
-<div id="files">
+
+<div class="card">
+
+
+<h2>
+
+小镇记录
+
+</h2>
+
+
+
+<div class="chapter">
+
+<a href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0">
+
+第一章 · 辩
+
+</a>
+
+<br>
+
+<span class="small">
+
+殿堂档案：
+关于语言、争论与相遇
+
+</span>
+
+
+</div>
+
+
+
+<div class="chapter">
+
+<a href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0">
+
+第二章 · 行
+
+</a>
+
+
+<br>
+
+<span class="small">
+
+列车档案：
+关于远行、同行与城堡
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="chapter">
+
+
+<a href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0">
+
+第三章 · 默
+
+</a>
+
+
+<br>
+
+<span class="small">
+
+停靠档案：
+关于距离、等待与重逢前夜
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="chapter">
+
+
+<a href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0">
+
+第四章 · 逢
+
+</a>
+
+
+<br>
+
+<span class="small">
+
+春日档案：
+关于再次相遇与新的方向
+
+</span>
 
 
 </div>
@@ -263,6 +415,11 @@ class="hidden">
 
 
 </div>
+
+
+
+</div>
+
 
 
 </div>
@@ -277,93 +434,19 @@ class="hidden">
 const residents={
 
 
-"410001":{
+"410001":
 
-name:"琳达",
-
-chapters:[
+"居民：琳达",
 
 
-{
+"410002":
 
-title:"第一章·辩",
-
-videos:[
-
-["c1_001_debate.mp4","第一次争论"]
-
-]
-
-},
+"居民：程程",
 
 
+"410003":
 
-{
-
-title:"第二章·行",
-
-videos:[
-
-["c2_001_yancheng.mp4","盐城列车记录"],
-
-["c2_002_harbin.mp4","冬日远行"]
-
-]
-
-},
-
-
-{
-
-title:"第三章·默",
-
-videos:[
-
-["c3_001_meeting.mp4","偶然相遇"]
-
-]
-
-},
-
-
-{
-
-title:"第四章·逢",
-
-videos:[
-
-["c4_001_graduation.mp4","春日重逢"]
-
-]
-
-}
-
-
-]
-
-
-},
-
-
-
-
-"410002":{
-
-name:"程程",
-
-chapters:[]
-
-},
-
-
-
-"410003":{
-
-name:"小林",
-
-chapters:[]
-
-}
+"居民：小林"
 
 
 };
@@ -384,16 +467,15 @@ let code=document
 if(!residents[code]){
 
 
-alert("这个坐标尚未被记录。");
+alert(
+"该居民坐标尚未被记录。"
+);
+
 
 return;
 
 
 }
-
-
-
-let person=residents[code];
 
 
 
@@ -412,96 +494,14 @@ document
 
 
 document
-.getElementById("name")
+.getElementById("resident")
 .innerHTML=
-
-"居民："+person.name;
-
-
-
-let html="";
-
-
-
-person.chapters.forEach(ch=>{
-
-
-html+=`
-
-<div class="chapter">
-
-<h3>${ch.title}</h3>
-
-`;
-
-
-ch.videos.forEach(v=>{
-
-
-html+=`
-
-<div class="video">
-
-<p>${v[1]}</p>
-
-
-<video controls>
-
-<source src="videos/${getPath(ch.title)}/${v[0]}">
-
-</video>
-
-
-</div>
-
-
-`;
-
-
-
-});
-
-
-
-html+=`</div>`;
-
-
-});
-
-
-
-document
-.getElementById("files")
-.innerHTML=html;
+residents[code];
 
 
 
 }
 
-
-
-
-
-function getPath(title){
-
-
-if(title.includes("第一"))
-return "chapter1";
-
-
-if(title.includes("第二"))
-return "chapter2";
-
-
-if(title.includes("第三"))
-return "chapter3";
-
-
-if(title.includes("第四"))
-return "chapter4";
-
-
-}
 
 
 </script>
