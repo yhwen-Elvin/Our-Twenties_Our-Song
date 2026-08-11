@@ -1,511 +1,261 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="UTF-8">
 
 <title>
 二十岁是我们的歌 · 小镇档案馆
 </title>
 
-
 <style>
-
-
 body{
-
 margin:0;
-
 background:#f4efe5;
-
 font-family:
 "PingFang SC",
 "Microsoft YaHei",
 sans-serif;
-
 color:#4b4439;
-
 }
-
 
 .container{
-
 max-width:720px;
-
 margin:auto;
-
 padding:60px 30px;
-
 }
-
 
 h1{
-
 font-weight:400;
-
 letter-spacing:5px;
-
 text-align:center;
-
 }
-
 
 .subtitle{
-
 text-align:center;
-
 line-height:2;
-
 margin-top:25px;
-
 }
-
-
 
 .card{
-
 background:#fffdf8;
-
 padding:35px;
-
 border-radius:18px;
-
 margin-top:40px;
-
 box-shadow:
 0 8px 25px rgba(0,0,0,0.08);
-
 }
-
-
 
 input{
-
 width:80%;
-
 padding:14px;
-
 border-radius:10px;
-
 border:1px solid #ddd;
-
 font-size:16px;
-
 text-align:center;
-
 }
-
-
 
 button{
-
 margin-top:25px;
-
 padding:12px 35px;
-
 border:none;
-
 border-radius:30px;
-
 background:#82715c;
-
 color:white;
-
 font-size:15px;
-
 cursor:pointer;
-
 }
-
-
 
 .hidden{
-
 display:none;
-
 }
-
-
 
 .chapter{
-
 margin-top:20px;
-
 padding:20px;
-
 background:#f8f4eb;
-
 border-radius:12px;
-
 }
-
 
 .chapter a{
-
 text-decoration:none;
-
 color:#675743;
-
 }
-
-
 
 .small{
-
 font-size:14px;
-
 opacity:.65;
-
 line-height:1.8;
-
 }
-
 
 .line{
-
 height:1px;
-
 background:#ddd;
-
 margin:25px 0;
-
 }
 
-
 </style>
-
-
 </head>
-
-
 <body>
-
-
 <div class="container">
 
-
-
 <!-- 登录页 -->
-
 <div id="login">
-
-
 <h1>
-
 二十岁是我们的歌
-
 </h1>
-
-
 <p class="subtitle">
-
 小镇档案馆<br>
-
 请输入你的居民坐标
-
 </p>
-
-
 
 <div class="card"
 style="text-align:center;">
-
 
 <input 
 id="code"
 placeholder="居民编号">
 
-
 <br>
-
 
 <button onclick="enterTown()">
-
 定位
-
 </button>
-
-
 <p class="small">
-
 坐标来自你收到的信封。
-
 </p>
-
-
 </div>
-
-
 </div>
-
-
-
-
 
 <!-- 档案页 -->
-
-
 <div id="archive"
 class="hidden">
-
-
 <h1>
-
 居民档案
-
 </h1>
-
-
-
 <div class="card">
-
-
 <h2 id="resident">
-
 </h2>
-
-
 <div class="line"></div>
-
-
 <p>
-
 档案状态：
 已归档
-
 </p>
 
-
 <p>
-
 停留时间：
-2023 - 2026
-
+2022 - 2026
 </p>
-
 
 <p>
-
 所在区域：
-二十岁小镇
-
+江苏省·南京市
 </p>
-
-
 
 <p class="small">
-
 正在调取居民曾留下的声音与影像……
-
 </p>
 
-
-
 </div>
-
-
-
-
 
 <div class="card">
-
-
 <h2>
-
 小镇记录
-
 </h2>
 
-
-
 <div class="chapter">
-
 <a href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0">
-
 第一章 · 辩
-
 </a>
-
 <br>
-
 <span class="small">
-
 殿堂档案：
-关于语言、争论与相遇
-
+关于语言、辩经与相遇
 </span>
-
-
 </div>
 
-
-
 <div class="chapter">
-
 <a href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0">
-
 第二章 · 行
-
 </a>
-
-
 <br>
-
 <span class="small">
-
 列车档案：
-关于远行、同行与城堡
-
+关于远航、同行与城堡
 </span>
-
-
 </div>
 
-
-
-
 <div class="chapter">
-
-
 <a href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0">
-
 第三章 · 默
-
 </a>
-
-
 <br>
-
 <span class="small">
-
 停靠档案：
-关于距离、等待与重逢前夜
-
+关于距离、忙碌与等待
 </span>
-
-
 </div>
-
-
-
 
 <div class="chapter">
-
-
 <a href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0">
-
 第四章 · 逢
-
 </a>
-
-
 <br>
-
 <span class="small">
-
 春日档案：
-关于再次相遇与新的方向
-
+关于重逢与新的方向
 </span>
 
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 
 
 <script>
-
-
 const residents={
-
-
-"410001":
-
+"260304":
 "居民：琳达",
-
-
-"410002":
-
+"260401":
 "居民：程程",
-
-
-"410003":
-
+"260402":
 "居民：小林"
-
-
 };
 
-
-
-
-
 function enterTown(){
-
 
 let code=document
 .getElementById("code")
 .value;
 
-
-
 if(!residents[code]){
-
 
 alert(
 "该居民坐标尚未被记录。"
 );
 
-
 return;
 
-
 }
-
-
 
 document
 .getElementById("login")
 .classList
 .add("hidden");
 
-
-
 document
 .getElementById("archive")
 .classList
 .remove("hidden");
-
-
 
 document
 .getElementById("resident")
 .innerHTML=
 residents[code];
 
-
-
 }
 
 
-
 </script>
-
 
 
 </body>
