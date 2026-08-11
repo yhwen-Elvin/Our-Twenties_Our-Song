@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -51,7 +50,7 @@ body{
 
     inset:0;
 
-    background-image:url("town-map.png");
+    background-image:url("images/town-map.png");
 
     background-size:cover;
 
@@ -297,7 +296,18 @@ button:hover{
    小镇章节
 ========================= */
 
+/*
+   整个章节色块都是链接，
+   不只是标题文字。
+*/
+
 .chapter{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#675743;
 
     margin-top:18px;
 
@@ -329,11 +339,7 @@ button:hover{
 }
 
 
-.chapter a{
-
-    text-decoration:none;
-
-    color:#675743;
+.chapter-title{
 
     font-size:18px;
 
@@ -616,7 +622,9 @@ button:hover{
 
 
 
-    <!-- 居民信息 -->
+    <!-- ==================================================
+         居民信息
+    ================================================== -->
 
     <div class="card">
 
@@ -633,14 +641,6 @@ button:hover{
 
             档案状态：
             已归档
-
-        </p>
-
-
-        <p>
-
-            身份：
-            结辩
 
         </p>
 
@@ -694,23 +694,25 @@ button:hover{
 
 
 
-        <!-- 第一章 -->
+        <!-- ==================================================
+             第一章
+        ================================================== -->
 
-        <div class="chapter">
+        <a
+            class="chapter"
+            href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0"
+            target="_blank"
+            rel="noopener">
 
 
-            <a
-                href="https://www.feicut.com/fv/FVqgwq6q91y2?cm=2&fc=9&p=0"
-                target="_blank"
-                rel="noopener">
+            <div class="chapter-title">
 
                 第一章 · 辩
 
-            </a>
+            </div>
 
 
-            <div
-                class="small chapter-description">
+            <div class="small chapter-description">
 
                 殿堂档案：<br>
 
@@ -719,27 +721,29 @@ button:hover{
             </div>
 
 
-        </div>
+        </a>
 
 
 
-        <!-- 第二章 -->
+        <!-- ==================================================
+             第二章
+        ================================================== -->
 
-        <div class="chapter">
+        <a
+            class="chapter"
+            href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0"
+            target="_blank"
+            rel="noopener">
 
 
-            <a
-                href="https://www.feicut.com/fv/FVfu9ir1knrc?cm=2&fc=9&p=0"
-                target="_blank"
-                rel="noopener">
+            <div class="chapter-title">
 
                 第二章 · 行
 
-            </a>
+            </div>
 
 
-            <div
-                class="small chapter-description">
+            <div class="small chapter-description">
 
                 列车档案：<br>
 
@@ -748,27 +752,29 @@ button:hover{
             </div>
 
 
-        </div>
+        </a>
 
 
 
-        <!-- 第三章 -->
+        <!-- ==================================================
+             第三章
+        ================================================== -->
 
-        <div class="chapter">
+        <a
+            class="chapter"
+            href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0"
+            target="_blank"
+            rel="noopener">
 
 
-            <a
-                href="https://www.feicut.com/fv/FVfgsl2s4qzo?cm=2&fc=4&p=0"
-                target="_blank"
-                rel="noopener">
+            <div class="chapter-title">
 
                 第三章 · 默
 
-            </a>
+            </div>
 
 
-            <div
-                class="small chapter-description">
+            <div class="small chapter-description">
 
                 停靠档案：<br>
 
@@ -777,27 +783,29 @@ button:hover{
             </div>
 
 
-        </div>
+        </a>
 
 
 
-        <!-- 第四章 -->
+        <!-- ==================================================
+             第四章
+        ================================================== -->
 
-        <div class="chapter">
+        <a
+            class="chapter"
+            href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0"
+            target="_blank"
+            rel="noopener">
 
 
-            <a
-                href="https://www.feicut.com/fv/FVpqs38801za?cm=2&fc=4&p=0"
-                target="_blank"
-                rel="noopener">
+            <div class="chapter-title">
 
                 第四章 · 逢
 
-            </a>
+            </div>
 
 
-            <div
-                class="small chapter-description">
+            <div class="small chapter-description">
 
                 春日档案：<br>
 
@@ -806,7 +814,7 @@ button:hover{
             </div>
 
 
-        </div>
+        </a>
 
 
     </div>
@@ -858,7 +866,9 @@ button:hover{
 
 
 
-    <!-- 返回主页 -->
+    <!-- ==================================================
+         返回主页
+    ================================================== -->
 
     <button
         class="return-button"
